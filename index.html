@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jison Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <script src="my-language.js"></script>
+  </head>
+  <body class="container">
+    <h1>Jison Example</h1>
+
+    <div class="row">
+      <div class="col-md-5">
+        <textarea class="source form-control" rows="8">5*PI^2</textarea>
+      </div>
+      <div class="col-md-2">
+        <button class="compile-button btn btn-primary btn-lg btn-block">Compile &raquo;</button>
+      </div>
+      <div class="col-md-5">
+        <textarea class="output form-control" rows="8"></textarea>
+      </div>
+    </div>
+
+    <script>
+      var $source = document.querySelector(".source");
+      var $output = document.querySelector(".output");
+      var $compileButton = document.querySelector(".compile-button");
+
+      $compileButton.addEventListener('click', function() {
+        var output = myLanguage.parse($source.innerHTML);
+        $output.innerHTML = output;
+      });
+    </script>
+  </body>
+</html>
