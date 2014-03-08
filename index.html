@@ -29,8 +29,8 @@
       var $compileButton = document.querySelector(".compile-button");
 
       $compileButton.addEventListener('click', function() {
-        var output = myLanguage.parse($source.innerHTML);
-        $output.innerHTML = output;
+        var output = myLanguage.parse($source.value);
+        $output.value = output;
       });
     </script>
   </body>
